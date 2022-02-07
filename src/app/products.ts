@@ -27,7 +27,7 @@ export const products = [
   {
     id: 4,
     name: 'Asus Zenfone Max Pro M1',
-    price: 150,
+    price: 1150,
     description: 'Underrated but powerful smartphone',
   },
 ];
