@@ -1,0 +1,21 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      <!-- just concatenating two strings in the title that shows when we hover on the a -->
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">
+    <!-- does it exist ? Create this element -->
+    Description: {{ product.description }}
+  </p>
+  <button type="button" (click)="share()">Share this product</button>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
