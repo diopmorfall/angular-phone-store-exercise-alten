@@ -12,7 +12,8 @@
     Description: {{ product.description }}
   </p>
   <button type="button" (click)="share()">Share this product</button>
-  <app-product-alerts [product]="product"> </app-product-alerts>
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
   <!-- just embedding the child element that'll take the data from the parent -->
 </div>
 

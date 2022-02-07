@@ -11,8 +11,13 @@ export class ProductListComponent {
   products = products; // takes the data from X up there
 
   share() {
-    window.alert('The product has been shared!');
+    window.alert('Product shared!');
   }
+
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
+  // child event the parent will react to
 }
 
 /*
