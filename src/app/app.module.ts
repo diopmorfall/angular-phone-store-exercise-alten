@@ -15,12 +15,15 @@ import { CartComponent } from './cart/cart.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      // routes (?)
+      // I set the routes here, and I can call them in the whole app (?)
+      // Calling one will show the respective component's template
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
     ]),
   ],
   declarations: [
+    // each new component is added here when created
     AppComponent,
     TopBarComponent,
     ProductListComponent,
