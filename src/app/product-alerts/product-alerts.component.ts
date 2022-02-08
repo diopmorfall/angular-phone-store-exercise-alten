@@ -9,9 +9,9 @@ import { Product } from '../products';
   templateUrl: './product-alerts.component.html',
   styleUrls: ['./product-alerts.component.css'],
 })
-// the following class below will become a component with the html above
+// the following class below will become a component with the html above (?)
 export class ProductAlertsComponent implements OnInit {
-  //@Input() product!: Product;
+  //@Input() product!: Product; why does this change (?)
   @Input() product: Product | undefined;
   // takes the data from the Product class, which its value is stored in the parent
   @Output() notify = new EventEmitter();
