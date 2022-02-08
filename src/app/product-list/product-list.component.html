@@ -14,7 +14,11 @@
   <button type="button" (click)="share()">Share this product</button>
   <app-product-alerts [product]="product" (notify)="onNotify()">
   </app-product-alerts>
-  <!-- just embedding the child element that'll take the data from the parent -->
+  <!--
+    just embedding the child element that'll take the data from the parent; [product] an attribute that takes the product from the parent (@Input at work here)
+    
+    (notify) is the event, and we'll call the function when it fires
+  -->
 </div>
 
 <!-- 
