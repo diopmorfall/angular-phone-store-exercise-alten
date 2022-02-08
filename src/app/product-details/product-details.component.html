@@ -1,1 +1,8 @@
-<p>product-details works! Here's the deal</p>
+<h2>Product details</h2>
+
+<div *ngIf="product">
+  <h4>{{ product.name }}</h4>
+  <h5>{{ product.price | currency }}</h5>
+  <!-- currency is a pipe, and formats the value in a price format string -->
+  <p>{{ product.description }}</p>
+</div>
