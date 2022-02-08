@@ -2,10 +2,17 @@
 
 <div *ngFor="let product of products">
   <h3>
-    <a [title]="product.name + ' details'">
-      <!-- just concatenating two strings in the title that shows when we hover on the a -->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
+    <!--
+      concatenating two strings in the title,shown when we hover on it
+      routerLink creates customizes the anchor element, with /products/product.id
+      is routerLink typical of Angular (?)
+    -->
   </h3>
   <p *ngIf="product.description">
     <!-- does it exist ? Create this element -->
