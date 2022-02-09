@@ -10,12 +10,17 @@ import { products } from '../products'; // X
 export class ProductListComponent {
   products = products; // takes the data from X up there
 
-  share() {
-    window.alert('Product shared!');
+  share(event: any) {
+    // : any is used when it doesn't know what type expect
+    window.alert(event);
+    console.log(event);
   }
 
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  onNotify(event: any) {
+    window.alert(
+      'The notify event fired from the children and catched by the parent'
+    );
+    console.log(event);
   }
   // child event the parent will react to
 }

@@ -6,25 +6,30 @@
       [title]="product.name + ' details'"
       [routerLink]="['/products', product.id]"
     >
-      {{ product.name }}
+      {{ product.name + ' details' }}
     </a>
     <!--
-      concatenating two strings in the title,shown when we hover on it
-      routerLink creates customizes the anchor element, with /products/product.id
-      is routerLink typical of Angular (?)
+      [name]="computation here" (concatenating two strings in the title shown when we hover on it, that's also one)
+      without [] on the property name, there's no computation here (fixed value, look at top-bar.component.html)
+
+      [routerLink]=/products => base/product.id => dynamic payload]
+      is routerLink typical of Angular (?) Yes
     -->
   </h3>
   <p *ngIf="product.description">
     <!-- does it exist ? Create this element -->
     Description: {{ product.description }}
   </p>
-  <button type="button" (click)="share()">Share this product</button>
-  <app-product-alerts [product]="product" (notify)="onNotify()">
+  <button type="button" (click)="share($event)">Share this product</button>
+  <app-product-alerts [product]="product" (notify)="onNotify($event)">
   </app-product-alerts>
   <!--
-    just embedding the child element that'll take the data from the parent
-    [product] an attribute that takes the product from the parent (@Input at work here)
-    (notify) is the event, and we'll call the function when it fires
+    just embedding the child element that'll take the data from the parent (angular components are one inside another)
+    [product] an attribute that takes the product from the parent (@Input at work here, its input)
+
+    (notify) is an output, and in this case it'll output the event when it fires on the child element, to be catched and handled by the parent's function
+
+    notify($variable) to pass it, or it should be a property of the component (like product)
   -->
 </div>
 

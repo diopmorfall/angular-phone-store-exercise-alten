@@ -13,9 +13,9 @@ import { Product } from '../products';
 export class ProductAlertsComponent implements OnInit {
   //@Input() product!: Product; why does this change (?)
   @Input() product: Product | undefined;
-  // takes the data from the Product class, which its value is stored in the parent
+  // the input value must be of Product type
   @Output() notify = new EventEmitter();
-  // and here we kinda create this new event
+  // and here we kinda create this new event that'll be fired
 
   // I'm always defining the properties that'll be used as attributes in the html template elements
 
