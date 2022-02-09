@@ -6,6 +6,9 @@ import { CartService } from '../cart.service';
   selector: 'app-cart',
   template: `
     <h2 class="pippo | pluto">Cart</h2>
+    <p>
+      <a routerLink="/shipping">Shipping prices</a>
+    </p>
     <div *ngFor="let item of items" class="cart-item">
       <span>{{ item.name }}</span>
       <span>{{ item.price | currency }}</span>
