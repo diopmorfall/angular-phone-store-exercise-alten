@@ -5,5 +5,20 @@
 </p>
 <div *ngFor="let item of items" class="cart-item">
   <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
+  <span [className]="item.price > 900 ? 'pluto' : 'pippo'">
+    {{ item.price | currency }}
+  </span>
 </div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <!-- ngSubmit seems typical of forms, why not (submit) (?)-->
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address">Address</label>
+    <input type="text" id="address" formControlName="address" />
+  </div>
+  <button class="button" type="submit">Purchase</button>
+</form>
