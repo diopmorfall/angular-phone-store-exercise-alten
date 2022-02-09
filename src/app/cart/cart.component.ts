@@ -12,10 +12,11 @@ import { FormBuilder } from '@angular/forms';
     </p>
     <div *ngFor="let item of items" class="cart-item">
       <span>{{ item.name }}</span>
-      <span [className]="item.price > 900 ? 'pluto' : 'pippo'">
+      <span [className]="item.price > 700 ? 'pluto' : 'pippo'">
         {{ item.price | currency }}
       </span>
     </div>
+
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
       <div>
         <label for="name">Name</label>
