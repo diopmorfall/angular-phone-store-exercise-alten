@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products'; // X
+import { Product, products } from '../products'; // X
 
 @Component({
   selector: 'app-product-list',
@@ -8,7 +8,13 @@ import { products } from '../products'; // X
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products = products; // takes the data from X up there
+  products: Product[] | undefined;
+  constructor() {
+    setTimeout(() => {
+      this.products = products;
+    }, 2000);
+  }
+  //products = products; // takes the data from X up there
 
   share(event: any) {
     // : any is used when it doesn't know what type expect

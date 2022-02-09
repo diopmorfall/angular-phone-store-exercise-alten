@@ -10,8 +10,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product: Product | undefined; // this property is Product type
-  // what type of pipe is it (?)
+  product: Product | undefined;
   constructor(private route: ActivatedRoute, private cartService: CartService) {
     // ActivatedRoute has infos about the route and its parameters
     const routeParams = this.route.snapshot.paramMap;

@@ -6,7 +6,7 @@
       [title]="product.name + ' details'"
       [routerLink]="['/products', product.id]"
     >
-      {{ product.name + ' details' }}
+      {{ product?.name + ' details' }}
     </a>
     <!--
       [name]="computation here" (concatenating two strings in the title shown when we hover on it, that's also one)
@@ -21,8 +21,8 @@
     Description: {{ product.description }}
   </p>
   <button type="button" (click)="share($event)">Share this product</button>
-  <app-product-alerts [product]="product" (notify)="onNotify($event)">
-  </app-product-alerts>
+  <product-alerts [product]="product" (notify)="onNotify($event)">
+  </product-alerts>
   <!--
     just embedding the child element that'll take the data from the parent (angular components are one inside another)
     [product] an attribute that takes the product from the parent (@Input at work here, its input)
