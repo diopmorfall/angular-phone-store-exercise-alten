@@ -7,21 +7,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
   items: Product[] = [];
+  cars: Product[] = [];
   // items is a product array type (?) (initially empty)
   constructor(private http: HttpClient) {}
 
   addToCart(product: Product) {
     this.items.push(product);
+    this.cars.push(product);
     // the product we get has to be of the same type of the items
   }
 
   getItems() {
     return this.items;
+    return this.cars;
   }
 
   clearItems() {
     this.items = [];
+    this.cars = [];
     return this.items;
+    return this.cars;
   }
 
   getShippingPrices() {

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Product, products } from '../products'; // X
+import { cars } from '../cars';
 
 @Component({
   selector: 'app-product-list',
@@ -9,9 +10,11 @@ import { Product, products } from '../products'; // X
 })
 export class ProductListComponent {
   products: Product[] | undefined;
+  cars: Product[] | undefined;
   constructor() {
     setTimeout(() => {
       this.products = products;
+      this.cars = cars;
     }, 2000);
   }
   //products = products; // takes the data from X up there

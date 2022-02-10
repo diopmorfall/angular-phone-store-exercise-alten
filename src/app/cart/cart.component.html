@@ -1,24 +1,57 @@
-<h2>Cart</h2>
-
+<h2 class="pippo | pluto">Cart</h2>
 <p>
   <a routerLink="/shipping">Shipping prices</a>
 </p>
-<div *ngFor="let item of items" class="cart-item">
-  <span>{{ item.name }}</span>
-  <span [className]="item.price > 900 ? 'pluto' : 'pippo'">
-    <!-- 
-      the class assignment could also be done in this (longer) way:
-      [ngClass]="{
-        'pippo': item.price < 900,
-        'pluto': item.price > 900
-      }"
-    -->
-    {{ item.price | currency }}
-  </span>
-</div>
+<!--
+<app-list-item
+  *ngFor="let item of items"
+  [label]="item.name"
+  [price]="item.price"
+  [priceColor]="item.price | colorPicker"
+>
+</app-list-item>
+
+<hr />
+<app-list-item
+  *ngFor="let item of items"
+  [label]="item.name"
+  [price]="item.price"
+  [priceColor]="
+    item.price
+      | colorPicker
+        : {
+            valueMax: 1000,
+            valueMin: 100,
+            valueAvg: 500,
+            returnValueMax: 'minnie',
+            returnValueMin: 'pippo',
+            returnValueAvg: 'minnie'
+          }
+  "
+>
+</app-list-item>
+-->
+<hr />
+
+<app-car-shop
+  *ngFor="let car of cars"
+  [name]="car.name"
+  [price]="car.price"
+  [priceColor]="
+    car.price
+      | colorPicker
+        : {
+            valueMax: 20000,
+            valueMin: 10000,
+            valueAvg: 15000,
+            returnValueMax: 'pluto',
+            returnValueMin: 'minnie',
+            returnValueAvg: 'paperino'
+          }
+  "
+></app-car-shop>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-  <!-- ngSubmit seems typical of forms, why not (submit) (?)-->
   <div>
     <label for="name">Name</label>
     <input type="text" id="name" formControlName="name" />

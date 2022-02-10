@@ -13,7 +13,7 @@ import { Product } from '../products';
 // the following class below will become a component with the html above (?) Yes
 export class ProductAlertsComponent implements OnInit {
   //@Input() product!: Product; //why does this change (?)
-  // these are two ways of saying product could be undefined or type Product; the one below seems clearer
+  // these are two ways of saying product could be undefined or type Product; the one below is more clear
   @Input() product: Product | undefined;
   // the input value must be of Product type, otherwise it'll be undefined
   @Output() notify = new EventEmitter();

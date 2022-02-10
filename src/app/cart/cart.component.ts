@@ -5,45 +5,12 @@ import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
-  template: `
-    <h2 class="pippo | pluto">Cart</h2>
-    <p>
-      <a routerLink="/shipping">Shipping prices</a>
-    </p>
-    <div *ngFor="let item of items" class="cart-item">
-      <span>{{ item.name }}</span>
-      <span [className]="item.price > 700 ? 'pluto' : 'pippo'">
-        {{ item.price | currency }}
-      </span>
-    </div>
-
-    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" formControlName="name" />
-      </div>
-
-      <div>
-        <label for="address">Address</label>
-        <input type="text" id="address" formControlName="address" />
-      </div>
-      <button class="button" type="submit">Purchase</button>
-    </form>
-  `,
-  styles: [
-    `
-    .pippo{
-      background: green;
-    }
-
-    .pluto{
-      background: red;
-    }
-  `,
-  ],
+  templateUrl: './cart.component.html',
+  styles: [],
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
+  cars = this.cartService.getItems();
   // why here, isn't cartService injected below (?)
   // Angular doesn't care of the order, it handles it
   checkoutForm = this.formBuilder.group({
@@ -57,9 +24,14 @@ export class CartComponent implements OnInit {
   ) {}
   // injection of some services, so that CartComponent can use them
 
+  logging() {
+    console.log('CIAO');
+  }
+
   onSubmit(): void {
     // on submitting the form we confirm the order and reset everything
     this.items = this.cartService.clearItems();
+    this.cars = this.cartService.clearItems();
     console.log('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
   }

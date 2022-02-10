@@ -7,3 +7,11 @@
   <p>{{ product.description }}</p>
   <button type="button" (click)="addToCart(product)">Add to cart</button>
 </div>
+
+<div *ngIf="car">
+  <h4>{{ car.name }}</h4>
+  <h5>{{ car.price | currency }}</h5>
+  <!-- currency is a pipe, and formats the value in a price format string -->
+  <p>{{ car.description }}</p>
+  <button type="button" (click)="addToCart(car)">Add to cart</button>
+</div>
