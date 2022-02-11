@@ -146,7 +146,7 @@ app-top-bar h1 {
 }
 
 .pluto {
-  background: red;
+  background: gold;
 }
 
 .paperino {
@@ -157,11 +157,24 @@ app-top-bar h1 {
 }
 
 .smallcar {
-  background: lightblue;
+  background: green;
 }
 
 .bigcar {
-  background: lightcoral;
+  background: gold;
+}
+
+.midcar {
+  background: orange;
+}
+.bigBike {
+  background: gold;
+}
+.smallBike {
+  background: green;
+}
+.midBike {
+  background: orange;
 }
 /*
 Copyright Google LLC. All Rights Reserved.

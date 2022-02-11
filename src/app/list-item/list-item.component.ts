@@ -5,12 +5,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.css'],
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent {
   @Input() label: string = '';
   @Input() price: number | undefined;
   @Input() priceColor: string = '';
 
-  constructor() {}
+  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
-  ngOnInit(): void {}
+  showDesc = false;
 }

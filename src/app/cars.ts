@@ -21,7 +21,7 @@ export const cars = [
   {
     id: 3,
     name: 'Smart ForTwo',
-    price: 12_000,
+    price: 20_000,
     description: 'Single car',
   },
 ];

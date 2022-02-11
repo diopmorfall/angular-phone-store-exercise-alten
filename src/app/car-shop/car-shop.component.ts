@@ -9,6 +9,7 @@ export class CarShopComponent implements OnInit {
   @Input() name: string = '';
   @Input() price: number | undefined;
   @Input() priceColor: string = '';
+
   constructor() {}
 
   ngOnInit(): void {}

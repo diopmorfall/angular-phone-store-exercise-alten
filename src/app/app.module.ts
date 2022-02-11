@@ -14,6 +14,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ColorPicker } from './shared/style.pipe';
 import { CarShopComponent } from './car-shop/car-shop.component';
+import { BikesComponent } from './bikes/bikes.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { CarShopComponent } from './car-shop/car-shop.component';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cars/:carId', component: ProductDetailsComponent },
+      { path: 'bikes/:bikeId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
     ]),
@@ -42,6 +44,7 @@ import { CarShopComponent } from './car-shop/car-shop.component';
     ListItemComponent,
     ColorPicker,
     CarShopComponent,
+    BikesComponent,
   ],
   bootstrap: [AppComponent],
 })

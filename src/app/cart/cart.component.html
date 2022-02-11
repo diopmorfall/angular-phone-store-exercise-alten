@@ -10,8 +10,9 @@
   [priceColor]="item.price | colorPicker"
 >
 </app-list-item>
-
+-->
 <hr />
+<!--
 <app-list-item
   *ngFor="let item of items"
   [label]="item.name"
@@ -20,19 +21,36 @@
     item.price
       | colorPicker
         : {
-            valueMax: 1000,
-            valueMin: 100,
-            valueAvg: 500,
-            returnValueMax: 'minnie',
+            valueMax: 1500,
+            valueMin: 300,
+            valueAvg: 700,
+            returnValueMax: 'pluto',
             returnValueMin: 'pippo',
-            returnValueAvg: 'minnie'
+            returnValueAvg: 'paperino'
           }
   "
 >
 </app-list-item>
 -->
-<hr />
-
+<app-list-item
+  *ngFor="let bike of bikes"
+  [label]="bike.name"
+  [price]="bike.price"
+  [priceColor]="
+    bike.price
+      | colorPicker
+        : {
+            valueMax: 50000,
+            valueMin: 10000,
+            valueAvg: 20000,
+            returnValueMax: 'bigBike',
+            returnValueMin: 'smallBike',
+            returnValueAvg: 'midBike'
+          }
+  "
+  (onClick)="logging(bi)"
+></app-list-item>
+<!--
 <app-car-shop
   *ngFor="let car of cars"
   [name]="car.name"
@@ -41,16 +59,16 @@
     car.price
       | colorPicker
         : {
-            valueMax: 20000,
+            valueMax: 50000,
             valueMin: 10000,
-            valueAvg: 15000,
-            returnValueMax: 'pluto',
-            returnValueMin: 'minnie',
-            returnValueAvg: 'paperino'
+            valueAvg: 20000,
+            returnValueMax: 'bigcar',
+            returnValueMin: 'smallcar',
+            returnValueAvg: 'midcar'
           }
   "
 ></app-car-shop>
-
+-->
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name</label>

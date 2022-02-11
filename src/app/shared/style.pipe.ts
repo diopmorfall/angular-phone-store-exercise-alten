@@ -16,21 +16,24 @@ export class ColorPicker implements PipeTransform {
       returnValueMin: string;
       returnValueAvg: string;
     } = {
-      valueMax: 1000,
-      valueMin: 100,
-      valueAvg: 500,
-      returnValueMax: 'big-car',
-      returnValueMin: 'small-car',
+      valueMax: 1500,
+      valueMin: 300,
+      valueAvg: 700,
+      returnValueMax: 'pluto',
+      returnValueMin: 'pippo',
       returnValueAvg: 'paperino',
     }
   ): string {
     console.log('PIPE!');
     // const { valueMax, valueMin, valueAvg } = args;
-    let result = args.returnValueMin;
-    if (args.valueAvg > value) {
+    let result = '';
+
+    if (args.valueAvg <= value) {
       result = args.returnValueMax;
-    } else if (args.valueAvg < value) {
+    } else if (args.valueMin <= value) {
       result = args.returnValueAvg;
+    } else if (args.valueAvg > value) {
+      result = args.returnValueMin;
     }
     return result;
   }

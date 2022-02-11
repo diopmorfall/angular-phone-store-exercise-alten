@@ -24,6 +24,18 @@ export const products = [
     price: 299,
     description: '',
   },
+  {
+    id: 4,
+    name: 'Phone Medium',
+    price: 700,
+    description: '',
+  },
+  {
+    id: 5,
+    name: 'Phone Booom',
+    price: 301,
+    description: '',
+  },
 ];
 
 /*

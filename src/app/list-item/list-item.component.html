@@ -1,4 +1,7 @@
-<div class="cart-item">
+<div class="cart-item" (click)="showDesc = !showDesc; onClick.emit()">
   <span>{{ label }}</span>
   <span [class]="priceColor"> {{ price | currency }} </span>
+  <span *ngIf="showDesc">{{ label }}</span>
+
+  <!-- <span >{{ descrizione }}</span> -->
 </div>
