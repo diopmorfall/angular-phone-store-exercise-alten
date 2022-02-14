@@ -24,6 +24,7 @@
 </app-list-item>
 
 <hr />
+<!-- Loop for the phones -->
 <!--
 <app-list-item
   *ngFor="let item of items"
@@ -36,11 +37,12 @@
             valueMax: 1500,
             valueMin: 300,
             valueAvg: 700,
-            returnValueMax: 'pluto',
-            returnValueMin: 'pippo',
-            returnValueAvg: 'paperino'
+            returnValueMax: 'high-range',
+            returnValueMin: 'low-range',
+            returnValueAvg: 'mid-range'
           }
   "
+  (onClick)="logging(item)"
 >
 </app-list-item>
 
@@ -55,12 +57,12 @@
             valueMax: 50000,
             valueMin: 10000,
             valueAvg: 20000,
-            returnValueMax: 'bigBike',
-            returnValueMin: 'smallBike',
-            returnValueAvg: 'midBike'
+            returnValueMax: 'high-range',
+            returnValueMin: 'low-range',
+            returnValueAvg: 'mid-range'
           }
   "
-  (onClick)="logging(bike)"
+  (onClick)="logging(item)"
 ></app-list-item>
 
 <app-car-shop
