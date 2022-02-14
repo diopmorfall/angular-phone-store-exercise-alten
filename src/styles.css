@@ -176,6 +176,13 @@ app-top-bar h1 {
 .midBike {
   background: orange;
 }
+.infos {
+  background: lightgreen;
+}
+#imgCart {
+  max-width: 50%;
+  max-height: 50%;
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

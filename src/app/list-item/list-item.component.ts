@@ -13,4 +13,5 @@ export class ListItemComponent {
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
   showDesc = false;
+  
 }

@@ -48,7 +48,7 @@
             returnValueAvg: 'midBike'
           }
   "
-  (onClick)="logging(bi)"
+  (onClick)="logging(bike)"
 ></app-list-item>
 <!--
 <app-car-shop
@@ -81,3 +81,13 @@
   </div>
   <button class="button" type="submit">Purchase</button>
 </form>
+
+<div class="infos" (click)="itemShow = !itemShow">
+  <div *ngIf="itemShow">
+    <span>{{ descriptionShowed }}</span>
+    <hr />
+    <span>{{ priceShowed }}</span>
+    <hr />
+    <img id="imgCart" src="{{ imgUrl }}" />
+  </div>
+</div>

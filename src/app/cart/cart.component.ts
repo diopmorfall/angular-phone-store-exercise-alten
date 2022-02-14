@@ -25,9 +25,16 @@ export class CartComponent implements OnInit {
   ) {}
   // injection of some services, so that CartComponent can use them
 
-  listDescription: string[] = [];
+  itemShow: boolean = false;
+  priceShowed: number | undefined;
+  descriptionShowed: string = '';
+  imgUrl: string = '';
+
   logging(event: any) {
-    this.listDescription.push(event);
+    this.descriptionShowed = event.description;
+    this.itemShow = !this.itemShow;
+    this.priceShowed = event.price;
+    this.imgUrl = event.imgUrl;
     console.log(event);
   }
 
