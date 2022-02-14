@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
 
 import { Product, products } from '../products'; // X
-import { cars } from '../cars';
-import { bikes } from '../bikes';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
+  templateUrl: './product-list.component.html', // view
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
   products: Product[] | undefined;
-  cars: Product[] | undefined;
-  bikes: Product[] | undefined;
+
   constructor() {
+    /*
     setTimeout(() => {
       this.products = products;
-      this.cars = cars;
-      this.bikes = bikes;
     }, 2000);
+    */
+    this.products = products;
   }
   //products = products; // takes the data from X up there
 

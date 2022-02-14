@@ -23,6 +23,7 @@
   <button type="button" (click)="share($event)">Share this product</button>
   <product-alerts [product]="product" (notify)="onNotify($event)">
   </product-alerts>
+
   <!--
     just embedding the child element that'll take the data from the parent (angular components are one inside another)
     [product] an attribute that takes the product from the parent (@Input at work here, its input)
@@ -30,37 +31,9 @@
     (notify) is an output, and in this case it'll output the event when it fires on the child element, to be catched and handled by the parent's function
 
     notify($variable) to pass it, or it should be a property of the component (like product)
-  -->
 </div>
+--></div>
 
-<div *ngFor="let car of cars">
-  <h3>
-    <a [title]="car.name + ' details'" [routerLink]="['/cars', car.id]">
-      {{ car?.name + ' details' }}
-    </a>
-  </h3>
-  <p *ngIf="car.description">Description: {{ car.description }}</p>
-
-  <button type="button" (click)="share($event)">Share this product</button>
-  <!--
-    <product-alerts [product]="product" (notify)="onNotify($event)">
-    </product-alerts>
-  -->
-</div>
-<div *ngFor="let bike of bikes">
-  <h3>
-    <a [title]="bike.name + ' details'" [routerLink]="['/bikes', bike.id]">
-      {{ bike?.name + ' details' }}
-    </a>
-  </h3>
-  <p *ngIf="bike.description">Description: {{ bike.description }}</p>
-
-  <button type="button" (click)="share($event)">Share this product</button>
-  <!--
-    <product-alerts [product]="product" (notify)="onNotify($event)">
-    </product-alerts>
-  -->
-</div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

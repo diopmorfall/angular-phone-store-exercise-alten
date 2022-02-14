@@ -141,47 +141,24 @@ app-top-bar h1 {
   border-radius: 2px;
   background-color: #eeeeee;
 }
-.pippo {
+
+.low-range {
   background: green;
 }
 
-.pluto {
+.high-range {
   background: gold;
 }
 
-.paperino {
+.mid-range {
   background: orange;
 }
-.minnie {
-  background: pink;
-}
 
-.smallcar {
-  background: green;
-}
-
-.bigcar {
-  background: gold;
-}
-
-.midcar {
-  background: orange;
-}
-.bigBike {
-  background: gold;
-}
-.smallBike {
-  background: green;
-}
-.midBike {
-  background: orange;
-}
 .infos {
   background: lightgreen;
 }
 #imgCart {
-  max-width: 50%;
-  max-height: 50%;
+  width: 100%;
 }
 /*
 Copyright Google LLC. All Rights Reserved.

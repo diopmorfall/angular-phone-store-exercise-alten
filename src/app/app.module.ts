@@ -13,8 +13,6 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ColorPicker } from './shared/style.pipe';
-import { CarShopComponent } from './car-shop/car-shop.component';
-import { BikesComponent } from './bikes/bikes.component';
 
 @NgModule({
   imports: [
@@ -26,8 +24,6 @@ import { BikesComponent } from './bikes/bikes.component';
       // Calling one will show the respective component
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
-      { path: 'cars/:carId', component: ProductDetailsComponent },
-      { path: 'bikes/:bikeId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
     ]),
@@ -43,8 +39,6 @@ import { BikesComponent } from './bikes/bikes.component';
     ShippingComponent,
     ListItemComponent,
     ColorPicker,
-    CarShopComponent,
-    BikesComponent,
   ],
   bootstrap: [AppComponent],
 })

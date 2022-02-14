@@ -2,15 +2,27 @@
 <p>
   <a routerLink="/shipping">Shipping prices</a>
 </p>
-<!--
+
 <app-list-item
   *ngFor="let item of items"
   [label]="item.name"
   [price]="item.price"
-  [priceColor]="item.price | colorPicker"
+  [priceColor]="
+    item.price
+      | colorPicker
+        : {
+            valueMax: 50000,
+            valueMin: 10000,
+            valueAvg: 20000,
+            returnValueMax: 'high-range',
+            returnValueMin: 'low-range',
+            returnValueAvg: 'mid-range'
+          }
+  "
+  (onClick)="logging(item)"
 >
 </app-list-item>
--->
+
 <hr />
 <!--
 <app-list-item
@@ -31,7 +43,7 @@
   "
 >
 </app-list-item>
--->
+
 <app-list-item
   *ngFor="let bike of bikes"
   [label]="bike.name"
@@ -50,7 +62,7 @@
   "
   (onClick)="logging(bike)"
 ></app-list-item>
-<!--
+
 <app-car-shop
   *ngFor="let car of cars"
   [name]="car.name"

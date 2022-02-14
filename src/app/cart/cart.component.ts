@@ -10,8 +10,6 @@ import { FormBuilder } from '@angular/forms';
 })
 export class CartComponent implements OnInit {
   items = this.cartService.getItems();
-  cars = this.cartService.getItems();
-  bikes = this.cartService.getItems();
   // why here, isn't cartService injected below (?)
   // Angular doesn't care of the order, it handles it
   checkoutForm = this.formBuilder.group({
@@ -41,8 +39,8 @@ export class CartComponent implements OnInit {
   onSubmit(): void {
     // on submitting the form we confirm the order and reset everything
     this.items = this.cartService.clearItems();
-    this.cars = this.cartService.clearItems();
-    this.bikes = this.cartService.clearItems();
+    // this.cars = this.cartService.clearItems();
+    // this.bikes = this.cartService.clearItems();
     console.log('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
   }
